@@ -96,6 +96,8 @@ Sub stockVolume()
                   
                         'Add the required conditional formatting. Positive change should be green, while negative change should be red.
                         
+                        'Starting with Yearly Change.
+                        
                         'Check for positive change.
                         If ws.Range("J" & summaryTableRow).Value > 0 Then
                             ws.Range("J" & summaryTableRow).Interior.ColorIndex = 4
@@ -103,6 +105,18 @@ Sub stockVolume()
                         'Check for negative change.
                         Else
                             ws.Range("J" & summaryTableRow).Interior.ColorIndex = 3
+                        End If
+                        
+                        
+                        'Next is Percent Change.
+                        
+                        'Check for positive change.
+                        If ws.Range("K" & summaryTableRow).Value > 0 Then
+                            ws.Range("K" & summaryTableRow).Interior.ColorIndex = 4
+                        
+                        'Check for negative change.
+                        Else
+                            ws.Range("K" & summaryTableRow).Interior.ColorIndex = 3
                         End If
                   
                   'Move to the next row in the summary table.
